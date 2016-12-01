@@ -39,7 +39,7 @@
 
             var myVoices = [];
             for (var i=0; i<6; i++) {
-                var p = new Tone.Sampler('sounds/' + name + '.mp3').toMaster();
+                var p = new Tone.Sampler('C:\\Users\\bela_\\scratchEX\\sounds\\' + name + '.mp3').toMaster();
                 myVoices.push(p);
             }
 
