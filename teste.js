@@ -82,11 +82,11 @@
     }
     };
 
-    ext.my_first_block = function() {
+    ext.my_first_block = function(sound, pan) {
         // Code that gets executed when the block is run
-        panner.pan.value = 1;
+        panner.pan.value = pan;
 
-        soundSamplers[e.data.soundnum].nextVoice().triggerAttack(0, quantizeUnit);
+        soundSamplers[sound].nextVoice().triggerAttack(0, quantizeUnit);
 
 
     };
@@ -95,8 +95,11 @@
     var descriptor = {
         blocks: [
             // Block type, block name, function name
-            [' ', 'my first block', 'my_first_block'],
+            [' ', 'play %m.sounds with pan %n', 'my_first_block'],
         ]
+        menus: {
+          sounds: ['meow','boing','this_is_a_test','who_put_the_bomp','cave','drip_drop','drum_machine','eggs','zoop']
+				}
     };
 
     // Register the extension
