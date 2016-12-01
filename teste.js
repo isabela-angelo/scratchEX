@@ -21,7 +21,7 @@
 
 		var panner = new Tone.Panner(0);
 
-		synth.connect(autoWah);
+		//synth.connect(autoWah);
 		autoWah.connect(delay);
 		delay.connect(panner);
 		panner.toMaster();
