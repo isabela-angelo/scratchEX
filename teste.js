@@ -3,7 +3,7 @@
 		console.log('Tone library is already loaded');
 		startSynth();
 	} else {
-		$.getScript('http://ericrosenbaum.github.io/tone-synth-extension/Tone.min.js', startSynth);
+		$.getScript('http://isabela-angelo.github.io/scratchEX/Tone.min.js', startSynth);
 	}
   function startSynth() {
 
