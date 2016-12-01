@@ -16,21 +16,20 @@
 
     // effects
 
-    // effects chain
+    // effects
 
-		var autoWah = new Tone.AutoWah();
-		autoWah.wet.value = 0;
-		autoWah.sensitivity.value = -40;
+    var delay = new Tone.FeedbackDelay(0.25, 0.5);
+    delay.wet.value = 0;
 
-		var delay = new Tone.FeedbackDelay(0.25, 0.5);
-		delay.wet.value = 0;
+    var pitchShift = new Tone.PitchShift();
 
-		var panner = new Tone.Panner(0);
+    var panner = new Tone.Panner();
 
-		synth.connect(autoWah);
-		autoWah.connect(delay);
-		delay.connect(panner);
-		panner.toMaster();
+    var reverb = new Tone.Freeverb();
+    reverb.wet.value = 0;
+
+    Tone.Master.chain(delay, pitchShift, panner, reverb);
+
 
     var soundFileNames = ['meow','boing','this_is_a_test','who_put_the_bomp','cave','drip_drop','drum_machine','eggs','zoop'];
     var soundSamplers = loadSoundFiles(soundFileNames);
