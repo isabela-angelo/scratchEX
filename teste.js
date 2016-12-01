@@ -96,7 +96,7 @@
         blocks: [
             // Block type, block name, function name
             [' ', 'play %m.sounds with pan %n', 'my_first_block'],
-        ]
+        ],
         menus: {
           sounds: ['meow','boing','this_is_a_test','who_put_the_bomp','cave','drip_drop','drum_machine','eggs','zoop'],
 				}
