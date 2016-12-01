@@ -1,10 +1,6 @@
 (function(ext) {
-  if (typeof Tone !== 'undefined') {
-		console.log('Tone library is already loaded');
-		startSynth();
-	} else {
-		$.getScript('http://isabela-angelo.github.io/scratchEX/Tone.min.js', startSynth);
-	}
+  $.getScript('http://isabela-angelo.github.io/scratchEX/Tone.min.js', startSynth);
+
   function startSynth() {
 
     var tone = new Tone();
