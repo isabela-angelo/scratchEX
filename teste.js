@@ -68,7 +68,7 @@
     };
 
     function stopAllSounds() {
-			synth.triggerRelease();
+			//synth.triggerRelease();
 		}
 
     // Status reporting code
