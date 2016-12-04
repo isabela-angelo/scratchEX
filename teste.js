@@ -10,21 +10,19 @@
     var quantizeUnit = '0';
 
 
-    // effects chain
+    // effects
 
-		var autoWah = new Tone.AutoWah();
-		autoWah.wet.value = 0;
-		autoWah.sensitivity.value = -40;
+    var delay = new Tone.FeedbackDelay(0.25, 0.5);
+    delay.wet.value = 0;
 
-		var delay = new Tone.FeedbackDelay(0.25, 0.5);
-		delay.wet.value = 0;
+    var pitchShift = new Tone.PitchShift();
 
-		var panner = new Tone.Panner(0);
+    var panner = new Tone.Panner(0);
 
-		//synth.connect(autoWah);
-		autoWah.connect(delay);
-		delay.connect(panner);
-		panner.toMaster();
+    var reverb = new Tone.Freeverb();
+    reverb.wet.value = 0;
+
+    Tone.Master.chain(delay, pitchShift, panner, reverb);
 
 
     var soundFileNames = ['meow','boing','this_is_a_test','who_put_the_bomp','cave','drip_drop','drum_machine','eggs','zoop'];
@@ -39,7 +37,7 @@
 
             var myVoices = [];
             for (var i=0; i<6; i++) {
-                var p = new Tone.Sampler('C:\\Users\\bela_\\scratchEX\\sounds\\' + name + '.mp3').toMaster();
+                var p = new Tone.Sampler('sounds/' + name + '.mp3').toMaster();
                 myVoices.push(p);
             }
 
@@ -84,8 +82,9 @@
     ext.my_first_block = function(sound, pan) {
         // Code that gets executed when the block is run
         panner.pan.value = pan;
-
-        soundSamplers[sound].nextVoice().triggerAttack(0, quantizeUnit);
+        //var num = soundFileNames.indexOf(sound);
+        //console.log(panner.pan);
+        soundSamplers[0].nextVoice().triggerAttack(0, quantizeUnit);
 
 
     };
