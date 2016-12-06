@@ -82,9 +82,10 @@
     ext.my_first_block = function(sound, pan) {
         // Code that gets executed when the block is run
         panner.pan.value = pan;
-        //var num = soundFileNames.indexOf(sound);
+        var num = soundFileNames.indexOf(sound);
         //console.log(panner.pan);
-        soundSamplers[0].nextVoice().triggerAttack(0, quantizeUnit);
+        console.log("num ", num);
+        soundSamplers[num].nextVoice().triggerAttack(0, quantizeUnit);
 
 
     };
@@ -93,11 +94,9 @@
     var descriptor = {
         blocks: [
             // Block type, block name, function name
-            [' ', 'play %m.sounds with pan %n', 'my_first_block', 'meow', '1'],
+            [' ', 'play %n with pan %n', 'my_first_block', 'meow', '1'],
         ],
-        menus: {
-          sounds: ['meow','boing','this_is_a_test','who_put_the_bomp','cave','drip_drop','drum_machine','eggs','zoop'],
-				}
+
     };
 
     // Register the extension
