@@ -84,7 +84,7 @@
         panner.pan.value = pan;
         var num = soundFileNames.indexOf(sound);
         //console.log(panner.pan);
-        console.log("num ", num);
+        //console.log("num ", num);
         soundSamplers[num].nextVoice().triggerAttack(0, quantizeUnit);
 
 
