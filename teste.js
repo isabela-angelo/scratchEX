@@ -25,7 +25,7 @@
     Tone.Master.chain(delay, pitchShift, panner, reverb);
 
 
-    var soundFileNames = ['meow','boing','this_is_a_test','who_put_the_bomp','cave','drip_drop','drum_machine','eggs','zoop'];
+    var soundFileNames = ['meow','boing','this_is_a_test','who_put_the_bomp','cave','drip_drop','drum_machine','eggs','zoop', 'gato', 'bolo'];
     var soundSamplers = loadSoundFiles(soundFileNames);
 
     // polyphonic samplers
